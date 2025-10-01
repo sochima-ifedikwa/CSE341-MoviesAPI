@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongodb = require('./data/database')
+const mongodb = require('./database/database')
 
 
 const app = express();
@@ -31,3 +31,4 @@ mongodb.initDb((err) => {
         });
     }
 });
+oj 
