@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Inception",
+    "category": "Feature Film",
+    "actor": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
+    "genre": ["Science Fiction", "Thriller"]
+  },
+  {
+    "name": "Black Panther",
+    "category": "Feature Film",
+    "actor": ["Chadwick Boseman", "Lupita Nyong'o", "Michael B. Jordan"],
+    "genre": ["Action", "Superhero"]
+  },
+  {
+    "name": "Everything Everywhere All at Once",
+    "category": "Feature Film",
+    "actor": ["Michelle Yeoh", "Ke Huy Quan", "Stephanie Hsu"],
+    "genre": ["Science Fiction", "Adventure", "Comedy"]
+  },
+  {
+    "name": "The Office",
+    "category": "TV Series",
+    "actor": ["Steve Carell", "Rainn Wilson", "Jenna Fischer"],
+    "genre": ["Comedy", "Sitcom"]
+  },
+  {
+    "name": "Parasite",
+    "category": "Feature Film",
+    "actor": ["Song Kang-ho", "Choi Woo-shik", "Park So-dam"],
+    "genre": ["Thriller", "Drama"]
+  },
+  {
+    "name": "Spirited Away",
+    "category": "Animated Film",
+    "actor": ["Rumi Hiiragi", "Miyu Irino", "Mari Natsuki"],
+    "genre": ["Animation", "Fantasy"]
+  },
+  {
+    "name": "The Mandalorian",
+    "category": "TV Series",
+    "actor": ["Pedro Pascal", "Gina Carano", "Carl Weathers"],
+    "genre": ["Science Fiction", "Action", "Adventure"]
+  },
+  {
+    "name": "La La Land",
+    "category": "Feature Film",
+    "actor": ["Ryan Gosling", "Emma Stone", "John Legend"],
+    "genre": ["Musical", "Romance", "Drama"]
+  }
+]
