@@ -23,7 +23,7 @@ process.on('uncaughtException', (err, origin) => {
     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
 })
 
-mongodb.initDb((err) => {
+mongodb.initDatabase((err) => {
     if (err) {
         console.log(err);
     } else {
