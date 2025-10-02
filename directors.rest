@@ -1,0 +1,35 @@
+//---DIRECTORS--- complete the links below with valid values from the actual database
+
+
+### Get all directors 
+GET http://localhost:5000/directors/ HTTP/1.1
+
+### Get by id -- example: http://localhost:5000/directors/68ce23b2fb19f10ed2099214
+GET http://localhost:5000/directors/ HTTP/1.1
+
+
+
+### Post director
+POST http://localhost:5000/directors/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "fistName": "rob",
+        "lasName": "reiner", 
+        "birthdate": "03/06/1947", //MM/DD/YYYY
+        "nationality": "american"
+    }
+
+### Update director -- complete the link with a valid ID and another example info
+PUT http://localhost:5000/directors/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "fistName": "rob",
+        "lasName": "reiner", 
+        "birthdate": "03/06/1947", //MM/DD/YYYY
+        "nationality": "american"
+    }
+
+### Delete director -- complete the link with a valid ID
+DELETE http://localhost:5000/directors/ HTTP/1.1

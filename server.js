@@ -32,4 +32,3 @@ mongodb.initDb((err) => {
         });
     }
 });
-oj 

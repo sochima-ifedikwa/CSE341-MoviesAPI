@@ -1,0 +1,55 @@
+//---MOVIES--- complete the links below with valid values from the actual database
+
+### Get all movies 
+GET http://localhost:5000/movies/ HTTP/1.1
+
+### Get by id -- example: http://localhost:5000/movies/68ce23b2fb19f10ed2099214
+GET http://localhost:5000/movies/ HTTP/1.1
+
+### Get by tittle -- example: http://localhost:5000/movies/findByTittle?tittle=flipped
+GET http://localhost:5000/movies/findByTittle?tittle= HTTP/1.1
+
+### Get by director -- example: http://localhost:5000/movies/findByDirector?producer=rob+reiner -- (the '+' replaces blank spaces)
+GET http://localhost:5000/movies/findByDirector?director= HTTP/1.1
+
+### Get by one of the actors -- example: http://localhost:5000/movies/findByActor?actors=jamie+lee+curtis -- (the '+' replaces blank spaces)
+GET http://localhost:5000/movies/findByActor?actors= HTTP/1.1
+
+### Get by one of the genres -- example: http://localhost:5000/movies/findByGenre?genres=science+fiction -- (the '+' replaces blank spaces)
+GET http://localhost:5000/movies/findByGenre?genres= HTTP/1.1
+
+//what I know is that: Jamie Lee != jamie lee (I am not sure how to make it case-inssensitive yet)
+//I will suggest entering making all the values from the database lower case
+
+### Post movie
+POST http://localhost:5000/movies/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "tittle":"flipped",
+        "releaseDate":"08/06/2010",
+        "director":"rob reiner",
+        "actors":["madeline carroll", "callan mcauliffle"],
+        "producer":"rob reiner",
+        "country":"usa",
+        "genres":["romance", "youth", "fantasy"],
+        "category": "comedy-drama"  
+    }
+
+### Update movie -- complete the link with a valid ID and another example info
+PUT http://localhost:5000/movies/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "tittle":"flipped",
+        "releaseDate":"08/06/2010",
+        "director":"rob reiner",
+        "actors":["madeline carroll", "callan mcauliffle"],
+        "producer":"rob reiner",
+        "country":"usa",
+        "genres":["romance", "youth", "fantasy"],
+        "category": "comedy-drama"  
+    }
+
+### Delete movie -- complete the link with a valid ID
+DELETE http://localhost:5000/movies/ HTTP/1.1

@@ -1,0 +1,31 @@
+//---GENRES--- complete the links below with valid values from the actual database
+
+
+### Get all genres 
+GET http://localhost:5000/genres/ HTTP/1.1
+
+### Get by id -- example: http://localhost:5000/genres/68ce23b2fb19f10ed2099214
+GET http://localhost:5000/genres/ HTTP/1.1
+
+
+
+### Post genre
+POST http://localhost:5000/genres/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "genreName": "romance",
+        "description": "focuses on the development of the romantic relationship between characters"
+    }
+
+### Update genre -- complete the link with a valid ID and another example info
+PUT http://localhost:5000/genres/ HTTP/1.1
+Content-Type: application/json
+
+    {
+        "genreName": "romance",
+        "description": "focuses on the development of the romantic relationship between characters"
+    }
+
+### Delete genre -- complete the link with a valid ID
+DELETE http://localhost:5000/genres/ HTTP/1.1
