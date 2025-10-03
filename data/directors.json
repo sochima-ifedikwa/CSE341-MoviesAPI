@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Christopher Nolan",
+    "birthYear": 1970,
+    "nationality": "British-American",
+    "notableWorks": ["Inception", "The Dark Knight", "Interstellar"],
+    "awards": ["Saturn Award", "Empire Award"]
+  },
+  {
+    "name": "Bong Joon-ho",
+    "birthYear": 1969,
+    "nationality": "South Korean",
+    "notableWorks": ["Parasite", "Snowpiercer", "Memories of Murder"],
+    "awards": ["Academy Award", "Golden Globe Award"]
+  },
+  {
+    "name": "Quentin Tarantino",
+    "birthYear": 1963,
+    "nationality": "American",
+    "notableWorks": ["Pulp Fiction", "Kill Bill", "Once Upon a Time in Hollywood"],
+    "awards": ["Academy Award", "Golden Globe Award"]
+  },
+  {
+    "name": "Greta Gerwig",
+    "birthYear": 1983,
+    "nationality": "American",
+    "notableWorks": ["Lady Bird", "Little Women", "Barbie"],
+    "awards": ["Golden Globe Award", "Critics’ Choice Award"]
+  },
+  {
+    "name": "Hayao Miyazaki",
+    "birthYear": 1941,
+    "nationality": "Japanese",
+    "notableWorks": ["Spirited Away", "My Neighbor Totoro", "Howl’s Moving Castle"],
+    "awards": ["Academy Award", "Golden Bear Award"]
+  }
+]

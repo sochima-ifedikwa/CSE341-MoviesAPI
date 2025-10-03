@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Action",
+    "description": "High-energy films with physical stunts, chases, battles, and fights."
+  },
+  {
+    "name": "Drama",
+    "description": "Focuses on realistic characters, emotional themes, and personal conflicts."
+  },
+  {
+    "name": "Comedy",
+    "description": "Lighthearted plots designed to amuse and provoke laughter."
+  },
+  {
+    "name": "Sci-Fi",
+    "description": "Stories based on advanced science, technology, and futuristic settings."
+  },
+  {
+    "name": "Animation",
+    "description": "Films created using drawn, computer-generated, or stop-motion images."
+  }
+]

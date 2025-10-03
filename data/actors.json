@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Leonardo DiCaprio",
+    "birthYear": 1974,
+    "nationality": "American",
+    "knownFor": ["Inception", "Titanic", "The Revenant"],
+    "awards": ["Academy Award", "Golden Globe Award"]
+  },
+  {
+    "name": "Scarlett Johansson",
+    "birthYear": 1984,
+    "nationality": "American",
+    "knownFor": ["Lost in Translation", "Black Widow", "Marriage Story"],
+    "awards": ["BAFTA Award", "Tony Award"]
+  },
+  {
+    "name": "Denzel Washington",
+    "birthYear": 1954,
+    "nationality": "American",
+    "knownFor": ["Training Day", "Fences", "Malcolm X"],
+    "awards": ["Academy Award", "Golden Globe Award"]
+  },
+  {
+    "name": "Natalie Portman",
+    "birthYear": 1981,
+    "nationality": "Israeli-American",
+    "knownFor": ["Black Swan", "V for Vendetta", "Thor"],
+    "awards": ["Academy Award", "Golden Globe Award"]
+  },
+  {
+    "name": "Song Kang-ho",
+    "birthYear": 1967,
+    "nationality": "South Korean",
+    "knownFor": ["Parasite", "Snowpiercer", "The Host"],
+    "awards": ["Cannes Film Festival Award", "Blue Dragon Film Award"]
+  }
+]
