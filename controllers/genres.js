@@ -65,7 +65,7 @@ const updateGenre = async (req, res) => {
     //#swagger.tags = ['Genres']
     const genreId = new ObjectId(req.params.id);
     const updatedGenre = {
-        genreName: req.body.genreName,
+        name: req.body.name,
         description: req.body.description
     };
     try {

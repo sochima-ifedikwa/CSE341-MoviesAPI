@@ -47,10 +47,11 @@ const getByField = async (req, res) => {//We can filter by any field with this s
 const createActor = async (req, res) => {
     //#swagger.tags = ['Actors']
     const newActor = {
-        fistName: req.body.fistName,
-        lasName: req.body.lastName, 
-        birthdate: req.body.birthdate, //MM/DD/YYYY
-        nationality: req.body.nationality
+        name: req.body.name,
+        birthYear: req.body.birthYear,
+        nationality: req.body.nationality,
+        knownFor: req.body.kownFor,
+        awards: req.body.awards
     };
     try {
         const database = await mongodb.getDatabase();
@@ -67,10 +68,11 @@ const updateActor = async (req, res) => {
     //#swagger.tags = ['Actors']
     const actorId = new ObjectId(req.params.id);
     const updatedActor = {
-        fistName: req.body.fistName,
-        lasName: req.body.lastName, 
-        birthdate: req.body.birthdate, //MM/DD/YYYY
-        nationality: req.body.nationality
+        name: req.body.name,
+        birthYear: req.body.birthYear,
+        nationality: req.body.nationality,
+        knownFor: req.body.kownFor,
+        awards: req.body.awards
     };
     try {
         const database = await mongodb.getDatabase();

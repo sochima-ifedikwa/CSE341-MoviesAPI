@@ -12,7 +12,6 @@ const getAll = async (req, res) => {
     } catch (err) {
             res.status(500).json(result.error || 'Some error occurred while retrieving the directors.');
     }
-    
 };   
 
 const getById = async (req, res) => {
@@ -47,10 +46,11 @@ const getByField = async (req, res) => {//We can filter by any field with this s
 const createDirector = async (req, res) => {
     //#swagger.tags = ['Directors']
     const newDirector = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName, 
-        birthdate: req.body.birthdate, //MM/DD/YYYY
-        nationality: req.body.nationality
+        name: req.body.name,
+        birthYear: req.body.birthYear,
+        nationality: req.body.nationality,
+        notableWorks: req.body.notableWorks,
+        awards: req.body.awards
     };
     try {
         const database = await mongodb.getDatabase();
@@ -67,10 +67,11 @@ const updateDirector = async (req, res) => {
     //#swagger.tags = ['Directors']
     const directorId = new ObjectId(req.params.id);
     const updatedDirector = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName, 
-        birthdate: req.body.birthdate, //MM/DD/YYYY
-        nationality: req.body.nationality
+        name: req.body.name,
+        birthYear: req.body.birthYear,
+        nationality: req.body.nationality,
+        notableWorks: req.body.notableWorks,
+        awards: req.body.awards
     };
     try {
         const database = await mongodb.getDatabase();
@@ -100,7 +101,6 @@ const removeDirector = async (req, res) => {
         res.status(500).json(result.error || 'Some error occurred while deleting the director.'); 
     }
 };
-
 
 //Exports
 module.exports = { 

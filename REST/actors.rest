@@ -14,10 +14,11 @@ POST http://localhost:5000/actors/ HTTP/1.1
 Content-Type: application/json
 
     {
-        "fistName": "jamie lee",
-        "lasName": "curtis", 
-        "birthdate": "11/22/1958", //MM/DD/YYYY
-        "nationality": "american"
+        "name": "Leonardo DiCaprio",
+        "birthYear": 1974,
+        "nationality": "American",
+        "knownFor": ["Inception", "Titanic", "The Revenant"],
+        "awards": ["Academy Award", "Golden Globe Award"]
     }
 
 ### Update actor -- complete the link with a valid ID and another example info
@@ -25,10 +26,11 @@ PUT http://localhost:5000/actors/ HTTP/1.1
 Content-Type: application/json
 
     {
-        "fistName": "jamie lee",
-        "lasName": "curtis", 
-        "birthdate": "11/22/1958", //MM/DD/YYYY
-        "nationality": "american"
+        "name": "Leonardo DiCaprio",
+        "birthYear": 1974,
+        "nationality": "American",
+        "knownFor": ["Inception", "Titanic", "The Revenant"],
+        "awards": ["Academy Award", "Golden Globe Award"]
     }
 
 ### Delete actor -- complete the link with a valid ID

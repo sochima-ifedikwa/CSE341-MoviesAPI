@@ -26,7 +26,7 @@ const getById = async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(result.error || 'Some error occurred while retrieving the movie.');
-    }  
+    }
 };
 
 const getByField = async (req, res) => {//We can filter by any field with this same fuction
@@ -108,7 +108,6 @@ const removeMovie = async (req, res) => {
         res.status(500).json(result.error || 'Some error occurred while deleting the movie.'); 
     }
 };
-
 
 //Exports
 module.exports = { 
