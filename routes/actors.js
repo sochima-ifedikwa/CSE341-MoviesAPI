@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 //controller
 const actorsController =  require('../controllers/actors');
+// const { actorRules, validate } = require('../middleware/validate');
 
 //routes
 router.get('/', actorsController.getAll);

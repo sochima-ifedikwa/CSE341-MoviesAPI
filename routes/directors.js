@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 //controller
 const directorsController =  require('../controllers/directors');
+// const { directorRules, validate } = require('../middleware/validate');
 
 //routes
 router.get('/', directorsController.getAll);

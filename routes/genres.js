@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 //controller
 const genresController =  require('../controllers/genres');
+// const { genreRules, validate } = require('../middleware/validate');
 
 //routes
 router.get('/', genresController.getAll);
