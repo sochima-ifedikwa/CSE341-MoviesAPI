@@ -6,8 +6,8 @@ GET http://localhost:5000/movies/ HTTP/1.1
 ### Get by id -- example: http://localhost:5000/movies/68ce23b2fb19f10ed2099214
 GET http://localhost:5000/movies/ HTTP/1.1
 
-### Get by tittle -- example: http://localhost:5000/movies/findByTittle?tittle=flipped
-GET http://localhost:5000/movies/findByTittle?tittle= HTTP/1.1
+### Get by title -- example: http://localhost:5000/movies/findByTitle?title=flipped
+GET http://localhost:5000/movies/findByTitle?title= HTTP/1.1
 
 ### Get by director -- example: http://localhost:5000/movies/findByDirector?producer=rob+reiner -- (the '+' replaces blank spaces)
 GET http://localhost:5000/movies/findByDirector?director= HTTP/1.1

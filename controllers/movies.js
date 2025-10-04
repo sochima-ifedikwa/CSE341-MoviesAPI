@@ -63,7 +63,7 @@ const createMovie = async (req, res) => {
     try {
         const newMovie = {
             title: req.body.title,
-            releaseDate: req.body.releaseDate, //MM/DD/YYYY
+            releaseYear: req.body.releaseYear, //YYYY
             director: req.body.director,
             actors: req.body.actors, //this is an array
             producer: req.body.producer,
@@ -103,7 +103,7 @@ const updateMovie = async (req, res) => {
         const movieId = new ObjectId(req.params.id);
         const updatedMovie = {
             title: req.body.title,
-            releaseDate: req.body.releaseDate,
+            releaseYear: req.body.releaseYear,
             director: req.body.director,
             actors: req.body.actors,
             producer: req.body.producer,

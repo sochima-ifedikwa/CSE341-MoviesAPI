@@ -1,50 +1,141 @@
 [
   {
-    "name": "Inception",
-    "category": "Feature Film",
-    "actor": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
-    "genre": ["Science Fiction", "Thriller"]
+    "title": "Inception",
+    "releaseYear": 2010,
+    "director": "Christopher Nolan",
+    "actors": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Elliot Page"
+    ],
+    "producer": "Emma Thomas",
+    "country": "USA",
+    "genres": [
+      "Science Fiction",
+      "Thriller"
+    ],
+    "category": "Feature Film"
   },
   {
-    "name": "Black Panther",
-    "category": "Feature Film",
-    "actor": ["Chadwick Boseman", "Lupita Nyong'o", "Michael B. Jordan"],
-    "genre": ["Action", "Superhero"]
+    "title": "Black Panther",
+    "releaseYear": 2018,
+    "director": "Ryan Coogler",
+    "actors": [
+      "Chadwick Boseman",
+      "Lupita Nyong'o",
+      "Michael B. Jordan"
+    ],
+    "producer": "Kevin Feige",
+    "country": "USA",
+    "genres": [
+      "Action",
+      "Superhero"
+    ],
+    "category": "Feature Film"
   },
   {
-    "name": "Everything Everywhere All at Once",
-    "category": "Feature Film",
-    "actor": ["Michelle Yeoh", "Ke Huy Quan", "Stephanie Hsu"],
-    "genre": ["Science Fiction", "Adventure", "Comedy"]
+    "title": "Everything Everywhere All at Once",
+    "releaseYear": 2022,
+    "director": "Daniel Kwan, Daniel Scheinert",
+    "actors": [
+      "Michelle Yeoh",
+      "Ke Huy Quan",
+      "Stephanie Hsu"
+    ],
+    "producer": "Anthony Russo, Joe Russo",
+    "country": "USA",
+    "genres": [
+      "Science Fiction",
+      "Adventure",
+      "Comedy"
+    ],
+    "category": "Feature Film"
   },
   {
-    "name": "The Office",
-    "category": "TV Series",
-    "actor": ["Steve Carell", "Rainn Wilson", "Jenna Fischer"],
-    "genre": ["Comedy", "Sitcom"]
+    "title": "The Office",
+    "releaseYear": 2005,
+    "director": "Greg Daniels",
+    "actors": [
+      "Steve Carell",
+      "Rainn Wilson",
+      "Jenna Fischer"
+    ],
+    "producer": "Ben Silverman",
+    "country": "USA",
+    "genres": [
+      "Comedy",
+      "Sitcom"
+    ],
+    "category": "TV Series"
   },
   {
-    "name": "Parasite",
-    "category": "Feature Film",
-    "actor": ["Song Kang-ho", "Choi Woo-shik", "Park So-dam"],
-    "genre": ["Thriller", "Drama"]
+    "title": "Parasite",
+    "releaseYear": 2019,
+    "director": "Bong Joon-ho",
+    "actors": [
+      "Song Kang-ho",
+      "Choi Woo-shik",
+      "Park So-dam"
+    ],
+    "producer": "Kwak Sin-ae",
+    "country": "South Korea",
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "category": "Feature Film"
   },
   {
-    "name": "Spirited Away",
-    "category": "Animated Film",
-    "actor": ["Rumi Hiiragi", "Miyu Irino", "Mari Natsuki"],
-    "genre": ["Animation", "Fantasy"]
+    "title": "Spirited Away",
+    "releaseYear": 2001,
+    "director": "Hayao Miyazaki",
+    "actors": [
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki"
+    ],
+    "producer": "Toshio Suzuki",
+    "country": "Japan",
+    "genres": [
+      "Animation",
+      "Fantasy"
+    ],
+    "category": "Animated Film"
   },
   {
-    "name": "The Mandalorian",
-    "category": "TV Series",
-    "actor": ["Pedro Pascal", "Gina Carano", "Carl Weathers"],
-    "genre": ["Science Fiction", "Action", "Adventure"]
+    "title": "The Mandalorian",
+    "releaseYear": 2019,
+    "director": "Jon Favreau",
+    "actors": [
+      "Pedro Pascal",
+      "Gina Carano",
+      "Carl Weathers"
+    ],
+    "producer": "Kathleen Kennedy",
+    "country": "USA",
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "category": "TV Series"
   },
   {
-    "name": "La La Land",
-    "category": "Feature Film",
-    "actor": ["Ryan Gosling", "Emma Stone", "John Legend"],
-    "genre": ["Musical", "Romance", "Drama"]
+    "title": "La La Land",
+    "releaseYear": 2016,
+    "director": "Damien Chazelle",
+    "actors": [
+      "Ryan Gosling",
+      "Emma Stone",
+      "John Legend"
+    ],
+    "producer": "Fred Berger",
+    "country": "USA",
+    "genres": [
+      "Musical",
+      "Romance",
+      "Drama"
+    ],
+    "category": "Feature Film"
   }
 ]

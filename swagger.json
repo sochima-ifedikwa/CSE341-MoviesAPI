@@ -712,7 +712,7 @@
         }
       }
     },
-    "/movies/findByTittle": {
+    "/movies/findByTitle": {
       "get": {
         "tags": [
           "Movies"
