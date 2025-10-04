@@ -5,8 +5,8 @@ const doc = {
     title: 'Movies API',
     description: 'API for managing movies'
   },
-  host: 'localhost:5000',
-  schemes: ['http'],
+  host: 'cse341-moviesapi.onrender.com',
+  schemes: ['https'],
 };
 
 const outputFile = './swagger.json'; // Output file for the generated Swagger documentation should be created in the root directory EMPTY
