@@ -27,7 +27,7 @@ Content-Type: application/json
 
     {
         "tittle":"flipped",
-        "releaseDate":"08/06/2010",
+        "releaseYear":2010,
         "director":"rob reiner",
         "actors":["madeline carroll", "callan mcauliffle"],
         "producer":"rob reiner",
@@ -42,7 +42,7 @@ Content-Type: application/json
 
     {
         "tittle":"flipped",
-        "releaseDate":"08/06/2010",
+        "releaseYear":2010,
         "director":"rob reiner",
         "actors":["madeline carroll", "callan mcauliffle"],
         "producer":"rob reiner",
