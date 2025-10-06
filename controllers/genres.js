@@ -61,7 +61,7 @@ const createGenre = async (req, res) => {
     //#swagger.tags = ['Genres']
     try {
         const newGenre = { // *******No idea what other fields we could add to this collection******
-            genreName: req.body.genreName,
+            name: req.body.name,
             description: req.body.description
         };
 
@@ -94,7 +94,7 @@ const updateGenre = async (req, res) => {
         }
         const genreId = new ObjectId(req.params.id);
         const updatedGenre = {
-            genreName: req.body.genreName,
+            name: req.body.name,
             description: req.body.description
         };
 

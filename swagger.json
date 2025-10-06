@@ -407,7 +407,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "genreName": {
+                "name": {
                   "example": "any"
                 },
                 "description": {
@@ -477,7 +477,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "genreName": {
+                "name": {
                   "example": "any"
                 },
                 "description": {
