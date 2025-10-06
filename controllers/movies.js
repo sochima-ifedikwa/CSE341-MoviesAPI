@@ -50,10 +50,10 @@ const getByField = async (req, res) => {//We can filter by any field with this s
         }
 
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(movies[0]);
+        res.status(200).json(movies);
     } catch (error) {
-        res.status(500).json({message:error || 'Some error occurred while retrieving the movie.'});
-    }  
+        res.status(500).json({message:error.message || 'Some error occurred while retrieving movies.'});
+    }
 }
 
 //CRUD Operations

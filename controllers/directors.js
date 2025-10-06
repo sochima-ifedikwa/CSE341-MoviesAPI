@@ -49,10 +49,10 @@ const getByField = async (req, res) => {//We can filter by any field with this s
         }
 
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(directors[0]);
+        res.status(200).json(directors);
     } catch (error) {
-        res.status(500).json({message:error || 'Some error occurred while retrieving the director.'});
-    }   
+        res.status(500).json({message:error.message || 'Some error occurred while retrieving directors.'});
+    }
 }
 
 //CRUD Operations
