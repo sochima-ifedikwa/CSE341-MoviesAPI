@@ -34,7 +34,7 @@ const getById = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(movies[0]);
     } catch (error) {
-        res.status(500).json({message:error || 'Some error occurred while retrieving the movie.'});
+        res.status(500).json({message:error.message || 'Some error occurred while retrieving the movie.'});
     }
 };   
 
@@ -46,7 +46,7 @@ const getByField = async (req, res) => {//We can filter by any field with this s
         const movies = await result.toArray();
 
         if (!movies || movies.length === 0) {
-            return res.status(404).json({ message: 'No movies found!' });
+            return res.status(404).json({ message: 'No movies found in thay field!' });
         }
 
         res.setHeader('Content-Type', 'application/json');
