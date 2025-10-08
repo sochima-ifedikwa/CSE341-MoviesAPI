@@ -724,7 +724,7 @@
         }
       }
     },
-    "/movies/findByTitle": {
+    "/movies/findByTitle/{title}": {
       "get": {
         "tags": [
           "Movies"
@@ -732,6 +732,14 @@
         "description": "",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
