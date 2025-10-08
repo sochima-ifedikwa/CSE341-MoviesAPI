@@ -6,10 +6,10 @@ const { movieRules, validate } = require('../middleware/validate');
 
 //routes
 router.get('/', moviesController.getAll);
-router.get('/findByTitle', moviesController.getByField);
-router.get('/findByActor', moviesController.getByField);
-router.get('/findByGenre', moviesController.getByField);
-router.get('/findByDirector', moviesController.getByField);
+router.get('/findByTitle/:title', moviesController.getByField);
+router.get('/findByActor/:actors', moviesController.getByField);
+router.get('/findByGenre/:genres', moviesController.getByField);
+router.get('/findByDirector/:director', moviesController.getByField);
 router.get('/:id', moviesController.getById); //This must be last to avoid conflict with other routes. Do not move it please.
 
 

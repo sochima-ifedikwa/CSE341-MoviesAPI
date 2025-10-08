@@ -4,19 +4,19 @@
 GET http://localhost:5000/movies/ HTTP/1.1
 
 ### Get by id -- example: http://localhost:5000/movies/68ce23b2fb19f10ed2099214
-GET http://localhost:5000/movies/ HTTP/1.1
+GET http://localhost:5000/movies/68e18dc368cb9f62e376470d HTTP/1.1
 
-### Get by title -- example: http://localhost:5000/movies/findByTitle?title=flipped
-GET http://localhost:5000/movies/findByTitle?title=Inception HTTP/1.1
+### Get by title -- example: http://localhost:5000/movies/findByTitle/Flipped == must be in Senctence case
+GET http://localhost:5000/movies/findByTitle/Inception HTTP/1.1
 
-### Get by director -- example: http://localhost:5000/movies/findByDirector?producer=rob+reiner -- (the '+' replaces blank spaces)
-GET http://localhost:5000/movies/findByDirector?director= HTTP/1.1
+### Get by director -- example: http://localhost:5000/movies/findByDirector/Rob Reiner -- (the '+' replaces blank spaces)
+GET http://localhost:5000/movies/findByDirector/Damien Chazelle HTTP/1.1
 
-### Get by one of the actors -- example: http://localhost:5000/movies/findByActor?actors=jamie+lee+curtis -- (the '+' replaces blank spaces)
-GET http://localhost:5000/movies/findByActor?actors= HTTP/1.1
+### Get by one of the actors -- example: http://localhost:5000/movies/findByActor/Jamie Lee Curtis -- (the '+' replaces blank spaces)
+GET http://localhost:5000/movies/findByActor/Chadwick Boseman HTTP/1.1
 
-### Get by one of the genres -- example: http://localhost:5000/movies/findByGenre?genres=science+fiction -- (the '+' replaces blank spaces)
-GET http://localhost:5000/movies/findByGenre?genres= HTTP/1.1
+### Get by one of the genres -- example: http://localhost:5000/movies/findByGenre/Science Fiction -- (the '+' replaces blank spaces)
+GET http://localhost:5000/movies/findByGenre/Action HTTP/1.1
 
 //what I know is that: Jamie Lee != jamie lee (I am not sure how to make it case-inssensitive yet)
 //I will suggest entering making all the values from the database lower case
