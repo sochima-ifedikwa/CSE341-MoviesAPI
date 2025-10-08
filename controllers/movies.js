@@ -40,9 +40,8 @@ const getById = async (req, res) => {
 
 const getByField = async (req, res) => {//We can filter by any field with this same fuction
     //#swagger.tags = ['Movies']
-    console.log(req.query);
     try {
-        const result = await mongodb.getDatabase().db('movies').collection('movies').find(req.query);
+        const result = await mongodb.getDatabase().db('movies').collection('movies').find(req.params);
         const movies = await result.toArray();
 
         if (!movies || movies.length === 0) {
