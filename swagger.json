@@ -754,7 +754,7 @@
         }
       }
     },
-    "/movies/findByActor": {
+    "/movies/findByActor/{actors}": {
       "get": {
         "tags": [
           "Movies"
@@ -762,6 +762,14 @@
         "description": "",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "actors",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
@@ -776,7 +784,7 @@
         }
       }
     },
-    "/movies/findByGenre": {
+    "/movies/findByGenre/{genres}": {
       "get": {
         "tags": [
           "Movies"
@@ -784,6 +792,14 @@
         "description": "",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "genres",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
@@ -798,7 +814,7 @@
         }
       }
     },
-    "/movies/findByDirector": {
+    "/movies/findByDirector/{director}": {
       "get": {
         "tags": [
           "Movies"
@@ -806,6 +822,14 @@
         "description": "",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "director",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
