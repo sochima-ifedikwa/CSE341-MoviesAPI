@@ -1,6 +1,10 @@
+// Import MongoDB connection and ObjectId for ID handling
 const mongodb = require('../data/database');
 const { ObjectId } = require('mongodb');
 
+/* *************************************
+*  Get all movies
+* ************************************* */
 const getAll = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
@@ -10,14 +14,17 @@ const getAll = async (req, res) => {
         if (!movies || movies.length === 0) {
             return res.status(404).json({ message: 'No movies found!' });
         }
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(movies);
     } catch (error) {
-        res.status(500).json({message:error || 'Some error occurred while retrieving the movies.'});
+        res.status(500).json({ message: error || 'Some error occurred while retrieving the movies.' });
     }
+};
 
-};      
-
+/* *************************************
+*  Get a movie by its ID
+* ************************************* */
 const getById = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
@@ -34,40 +41,45 @@ const getById = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(movies[0]);
     } catch (error) {
-        res.status(500).json({message:error.message || 'Some error occurred while retrieving the movie.'});
+        res.status(500).json({ message: error.message || 'Some error occurred while retrieving the movie.' });
     }
-};   
+};
 
-const getByField = async (req, res) => {//We can filter by any field with this same fuction
+/* *************************************
+*  Get movies by any field (filter)
+*  Example: /movies?country=USA&category=Action
+* ************************************* */
+const getByField = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
-        const result = await mongodb.getDatabase().db('movies').collection('movies').find(req.params);
+        const result = await mongodb.getDatabase().db('movies').collection('movies').find(req.query);
         const movies = await result.toArray();
 
         if (!movies || movies.length === 0) {
-            return res.status(404).json({ message: 'No movies found in thay field!' });
+            return res.status(404).json({ message: 'No movies found in that field!' });
         }
 
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(movies);
     } catch (error) {
-        res.status(500).json({message:error.message || 'Some error occurred while retrieving movies.'});
+        res.status(500).json({ message: error.message || 'Some error occurred while retrieving movies.' });
     }
-}
+};
 
-//CRUD Operations
-
+/* *************************************
+*  Create a new movie
+* ************************************* */
 const createMovie = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
         const newMovie = {
             title: req.body.title,
-            releaseYear: req.body.releaseYear, //YYYY
+            releaseYear: req.body.releaseYear, // Example: 2024
             director: req.body.director,
-            actors: req.body.actors, //this is an array
+            actors: req.body.actors, // Expected to be an array
             producer: req.body.producer,
             country: req.body.country,
-            genres: req.body.genres, //this is an array
+            genres: req.body.genres, // Expected to be an array
             category: req.body.category
         };
 
@@ -85,11 +97,13 @@ const createMovie = async (req, res) => {
         }
     } catch (error) {
         console.error('Error creating Movie:', error);
-        res.status(500).json({ message:error || 'Some error occurred while creating the movie.' });
+        res.status(500).json({ message: error || 'Some error occurred while creating the movie.' });
     }
-     
 };
 
+/* *************************************
+*  Update an existing movie by ID
+* ************************************* */
 const updateMovie = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
@@ -99,6 +113,7 @@ const updateMovie = async (req, res) => {
                 message: 'Invalid Movie ID format'
             });
         }
+
         const movieId = new ObjectId(req.params.id);
         const updatedMovie = {
             title: req.body.title,
@@ -110,6 +125,7 @@ const updateMovie = async (req, res) => {
             genres: req.body.genres,
             category: req.body.category
         };
+
         const result = await mongodb.getDatabase().db('movies').collection('movies').updateOne(
             { _id: movieId },
             { $set: updatedMovie }
@@ -132,10 +148,13 @@ const updateMovie = async (req, res) => {
         }
     } catch (error) {
         console.error('Error updating movie:', error);
-        res.status(500).json({ message:error || 'Some error occurred while updating the movie.' });
+        res.status(500).json({ message: error || 'Some error occurred while updating the movie.' });
     }
 };
-    
+
+/* *************************************
+*  Delete a movie by ID
+* ************************************* */
 const removeMovie = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
@@ -164,7 +183,9 @@ const removeMovie = async (req, res) => {
     }
 };
 
-//Exports
+/* *************************************
+*  Module Exports
+* ************************************* */
 module.exports = { 
     getAll,
     getById,

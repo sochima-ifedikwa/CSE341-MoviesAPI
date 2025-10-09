@@ -1,6 +1,10 @@
+// Import MongoDB connection and ObjectId
 const mongodb = require('../data/database');
 const { ObjectId } = require('mongodb');
 
+/* *************************************
+*  Get all genres
+* ************************************* */
 const getAll = async (req, res) => {
     //#swagger.tags = ['Genres']
     try {
@@ -10,13 +14,17 @@ const getAll = async (req, res) => {
         if (!genres || genres.length === 0) {
             return res.status(404).json({ message: 'No genres found!' });
         }
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(genres);
     } catch (error) {
-        res.status(500).json({message:error || 'Some error occurred while retrieving the genres.'});
+        res.status(500).json({ message: error || 'Some error occurred while retrieving the genres.' });
     }
-};   
+};
 
+/* *************************************
+*  Get a genre by its ID
+* ************************************* */
 const getById = async (req, res) => {
     //#swagger.tags = ['Genres']
     try {
@@ -33,12 +41,15 @@ const getById = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(genres[0]);
     } catch (error) {
-        res.status(500).json({message:error || 'Some error occurred while retrieving the genre.'});
+        res.status(500).json({ message: error || 'Some error occurred while retrieving the genre.' });
     }
-};   
+};
 
-
-const getByField = async (req, res) => {//We can filter by any field with this same fuction
+/* *************************************
+*  Get genres by any field (filter)
+*  Example: /genres?name=Comedy
+* ************************************* */
+const getByField = async (req, res) => {
     //#swagger.tags = ['Genres']
     console.log(req.query);
     try {
@@ -52,17 +63,19 @@ const getByField = async (req, res) => {//We can filter by any field with this s
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(genres);
     } catch (error) {
-        res.status(500).json({message:error.message || 'Some error occurred while retrieving genres.'});
+        res.status(500).json({ message: error.message || 'Some error occurred while retrieving genres.' });
     }
-}
+};
 
-//CRUD Operations
+/* *************************************
+*  Create a new genre
+* ************************************* */
 const createGenre = async (req, res) => {
     //#swagger.tags = ['Genres']
     try {
-        const newGenre = { // *******No idea what other fields we could add to this collection******
+        const newGenre = { 
             name: req.body.name,
-            description: req.body.description
+            description: req.body.description // You can expand this schema later as needed
         };
 
         const result = await mongodb.getDatabase().db('movies').collection('genres').insertOne(newGenre);
@@ -74,15 +87,18 @@ const createGenre = async (req, res) => {
             });
         } else {
             res.status(500).json({ 
-                message: 'Failed to create Director'
+                message: 'Failed to create Genre'
             });
         }
     } catch (error) {
         console.error('Error creating Genre:', error);
-        res.status(500).json({ message:error || 'Some error occurred while creating the genre.' });
+        res.status(500).json({ message: error || 'Some error occurred while creating the genre.' });
     }
 };
 
+/* *************************************
+*  Update a genre by ID
+* ************************************* */
 const updateGenre = async (req, res) => {
     //#swagger.tags = ['Genres']
     try {
@@ -92,6 +108,7 @@ const updateGenre = async (req, res) => {
                 message: 'Invalid Genre ID format'
             });
         }
+
         const genreId = new ObjectId(req.params.id);
         const updatedGenre = {
             name: req.body.name,
@@ -99,7 +116,7 @@ const updateGenre = async (req, res) => {
         };
 
         const result = await mongodb.getDatabase().db('movies').collection('genres').updateOne(
-            { _id: genreId }, 
+            { _id: genreId },
             { $set: updatedGenre }
         );
 
@@ -111,7 +128,7 @@ const updateGenre = async (req, res) => {
 
         if (result.modifiedCount > 0) {
             res.status(200).json({
-                message: 'Actor updated successfully'
+                message: 'Genre updated successfully'
             });
         } else {
             res.status(200).json({
@@ -120,10 +137,13 @@ const updateGenre = async (req, res) => {
         }
     } catch (error) {
         console.error('Error updating genre:', error);
-        res.status(500).json({ message:error || 'Some error occurred while updating the genre.' });
+        res.status(500).json({ message: error || 'Some error occurred while updating the genre.' });
     }
 };
-    
+
+/* *************************************
+*  Delete a genre by ID
+* ************************************* */
 const removeGenre = async (req, res) => {
     //#swagger.tags = ['Genres']
     try {
@@ -152,8 +172,9 @@ const removeGenre = async (req, res) => {
     }
 };
 
-
-//Exports
+/* *************************************
+*  Module Exports
+* ************************************* */
 module.exports = { 
     getAll,
     getById,
