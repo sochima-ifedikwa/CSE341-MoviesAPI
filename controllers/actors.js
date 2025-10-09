@@ -52,30 +52,6 @@ const getById = async (req, res) => {
     }  
 };
 
-// ======================= GET ACTOR(S) BY FIELD =======================
-const getByField = async (req, res) => { 
-    // We can filter by any field using query parameters
-    //#swagger.tags = ['Actors']
-    console.log(req.query);
-    try {
-        // Use query parameters from request to filter the results
-        const result = await mongodb.getDatabase().db('movies').collection('actors').find(req.query);
-        const actors = await result.toArray();
-
-        // If no results found, return 404
-        if (!actors || actors.length === 0) {
-            return res.status(404).json({ message: 'No actors found!' });
-        }
-
-        // Return filtered actors
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(actors);
-    } catch (error) {
-        // Handle query or server errors
-        res.status(500).json({message:error.message || 'Some error occurred while retrieving actors.'});
-    }
-};
-
 // ======================= CREATE ACTOR =======================
 const createActor = async (req, res) => {
     //#swagger.tags = ['Actors']
@@ -200,7 +176,6 @@ const removeActor = async (req, res) => {
 module.exports = { 
     getAll,
     getById,
-    getByField,
     createActor,
     updateActor,
     removeActor

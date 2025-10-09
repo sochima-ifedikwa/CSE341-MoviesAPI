@@ -46,28 +46,6 @@ const getById = async (req, res) => {
 };
 
 /* *************************************
-*  Get genres by any field (filter)
-*  Example: /genres?name=Comedy
-* ************************************* */
-const getByField = async (req, res) => {
-    //#swagger.tags = ['Genres']
-    console.log(req.query);
-    try {
-        const result = await mongodb.getDatabase().db('movies').collection('genres').find(req.query);
-        const genres = await result.toArray();
-
-        if (!genres || genres.length === 0) {
-            return res.status(404).json({ message: 'No genres found!' });
-        }
-
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(genres);
-    } catch (error) {
-        res.status(500).json({ message: error.message || 'Some error occurred while retrieving genres.' });
-    }
-};
-
-/* *************************************
 *  Create a new genre
 * ************************************* */
 const createGenre = async (req, res) => {
@@ -178,7 +156,6 @@ const removeGenre = async (req, res) => {
 module.exports = { 
     getAll,
     getById,
-    getByField,
     createGenre,
     updateGenre,
     removeGenre

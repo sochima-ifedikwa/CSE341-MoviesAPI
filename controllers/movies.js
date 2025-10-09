@@ -47,12 +47,15 @@ const getById = async (req, res) => {
 
 /* *************************************
 *  Get movies by any field (filter)
-*  Example: /movies?country=USA&category=Action
+*  Example: /movies/findByTitle/Inception
+*  Example: /movies/findByActor/Leonardo%20DiCaprio
+*  Example: /movies/findByGenre/Action
+*  Example: /movies/findByDirector/Christopher%20Nolan
 * ************************************* */
 const getByField = async (req, res) => {
     //#swagger.tags = ['Movies']
     try {
-        const result = await mongodb.getDatabase().db('movies').collection('movies').find(req.query);
+        const result = await mongodb.getDatabase().db('movies').collection('movies').find(req.params);
         const movies = await result.toArray();
 
         if (!movies || movies.length === 0) {
