@@ -51,30 +51,6 @@ const getById = async (req, res) => {
     }  
 };
 
-// ======================= GET DIRECTOR(S) BY FIELD =======================
-const getByField = async (req, res) => {
-    // This allows dynamic filtering by any field using query parameters
-    //#swagger.tags = ['Directors']
-    console.log(req.query);
-    try {
-        // Find directors matching the query filters
-        const result = await mongodb.getDatabase().db('movies').collection('directors').find(req.query);
-        const directors = await result.toArray();
-
-        // Handle case where no matching records are found
-        if (!directors || directors.length === 0) {
-            return res.status(404).json({ message: 'No directors found!' });
-        }
-
-        // Respond with the filtered directors
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(directors);
-    } catch (error) {
-        // Handle query or database errors
-        res.status(500).json({message:error.message || 'Some error occurred while retrieving directors.'});
-    }
-};
-
 // ======================= CREATE DIRECTOR =======================
 const createDirector = async (req, res) => {
     //#swagger.tags = ['Directors']
@@ -199,7 +175,6 @@ const removeDirector = async (req, res) => {
 module.exports = { 
     getAll,
     getById,
-    getByField,
     createDirector,
     updateDirector,
     removeDirector

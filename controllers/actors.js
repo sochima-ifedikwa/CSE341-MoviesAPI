@@ -206,7 +206,6 @@ const removeActor = async (req, res) => {
 module.exports = { 
     getAll,
     getById,
-    getByField,
     createActor,
     updateActor,
     removeActor
