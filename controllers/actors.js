@@ -21,6 +21,7 @@ const getAll = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(actors);
     } catch (error) {
+        console.error('Error fetching actors:', error);
         // Handle any unexpected server errors
         res.status(500).json({message: 'Some error occurred while retrieving the actors.'});
     }
@@ -47,6 +48,7 @@ const getById = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(actors[0]);
     } catch (error) {
+        console.error('Error fetching actors:', error);
         // Handle errors such as invalid ID or server issues
         res.status(500).json({message:error || 'Some error occurred while retrieving the actor.'});
     }  
@@ -71,6 +73,7 @@ const getByField = async (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(actors);
     } catch (error) {
+        console.error('Error fetching actors:', error);
         // Handle query or server errors
         res.status(500).json({message:error.message || 'Some error occurred while retrieving actors.'});
     }
@@ -105,6 +108,7 @@ const createActor = async (req, res) => {
             });
         }
     } catch (error) {
+        console.error('Error creating actors:', error);
         // Log and return server error
         console.error('Error creating actor:', error);
         res.status(500).json({ message:error || 'Some error occurred while creating the actor.' });
@@ -156,6 +160,7 @@ const updateActor = async (req, res) => {
             });
         }
     } catch (error) {
+        console.error('Error updating actors:', error);
         // Log and handle any update errors
         console.error('Error updating actor:', error);
         res.status(500).json({ message:error || 'Some error occurred while updating the actor.' });
@@ -189,6 +194,7 @@ const removeActor = async (req, res) => {
             message: 'Actor deleted successfully'
         });
     } catch (error) {
+        console.error('Error deleting actors:', error);
         // Log and handle deletion errors
         console.error('Error deleting actor:', error);
         res.status(500).json({ message: error || 'Some error occurred while deleting the actor.' });
