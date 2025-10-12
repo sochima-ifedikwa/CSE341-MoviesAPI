@@ -13,6 +13,12 @@ const { genreRules, validate } = require('../middleware/validate');
 // Import authentication middleware to secure specific routes
 const { isAuthenticated } = require('../middleware/authenticate');
 
+// If in test mode, load mock controller; else, load real one
+const isTest = process.env.NODE_ENV === 'test';
+const controller = isTest
+  ? require('../mocks/genres.mock')
+  : require('../controllers/genresController');
+
 /**
  * ===================================
  * Genre Routes
