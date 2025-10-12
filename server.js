@@ -120,12 +120,24 @@ process.on('uncaughtException', (err, origin) => {
 // ===============================================
 // DATABASE CONNECTION AND SERVER START
 // ===============================================
-mongodb.initDatabase((err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    app.listen(port, () => {
-      console.log(`✅ Connected to Database and listening on port ${port}`);
-    });
-  }
-});
+// mongodb.initDatabase((err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     app.listen(port, () => {
+//       console.log(`✅ Connected to Database and listening on port ${port}`);
+//     });
+//   }
+// });
+// ✅ Export only the app — not the listener
+if (process.env.NODE_ENV !== 'test') {
+  mongodb.initDatabase((err) => {
+    if (err) {
+      console.error('❌ Failed to connect to database', err);
+    } else {
+      app.listen(port, () => console.log(`✅ Connected to Database and listening on port ${port}`));
+    }
+  });
+}
+
+module.exports = app;

@@ -13,6 +13,12 @@ const { actorRules, validate } = require('../middleware/validate');
 // Import authentication middleware to protect certain routes
 const { isAuthenticated } = require('../middleware/authenticate');
 
+// If in test mode, load mock controller; else, load real one
+const isTest = process.env.NODE_ENV === 'test';
+const controller = isTest
+  ? require('../mocks/actors.mock')
+  : require('../controllers/actorsController');
+
 /**
  * ==============================
  * Actor Routes

@@ -1,3 +1,4 @@
+// if (process.env.NODE_ENV === 'test') next(); // skip auth
 /**
  * Middleware function to check if a user is authenticated.
  * 
