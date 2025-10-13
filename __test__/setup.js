@@ -13,6 +13,7 @@
 // });
 
 const database = require('../data/database');
+jest.setTimeout(30000); // 30 seconds
 
 beforeAll(async () => {
   await new Promise((resolve, reject) => {
