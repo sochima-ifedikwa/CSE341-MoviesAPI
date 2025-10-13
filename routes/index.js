@@ -66,6 +66,26 @@ router.get('/logout', function (req, res, next) {
     });
 });
 
+// Extra route to test mode
+if (process.env.NODE_ENV === 'test') {
+  router.get('/test-login', (req, res) => {
+    req.session.user = {
+      displayName: 'TestUser',
+      username: 'Logged in for test'
+    };
+    res.status(200).json({ message: 'Fake login created', user: req.session.user });
+  });
+}
+
+// routes.get('/', (req, res) => {
+//     const user = req.session.user;
+//     res.send(user 
+//         ? `Logged in as ${user.displayName || user.username}` 
+//         : 'Logged Out'
+//     );
+// });
+
+
 /**
  * Export the main router so it can be used in app.js (the main server file)
  */

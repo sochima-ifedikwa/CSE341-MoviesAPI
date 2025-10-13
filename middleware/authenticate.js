@@ -6,11 +6,12 @@
  *   the request is blocked with a 401 Unauthorized response.
  * - If the user is authenticated, the request continues to the next middleware or route handler.
  */
+
 const isAuthenticated = (req, res, next) => {
     // Check if a user session exists
     if (req.session.user === undefined) {
         // If not authenticated, respond with a 401 Unauthorized status
-        return res.status(401).json('You do not have any authorization to access this resource');
+        return res.status(401).json({ message: 'You do not have access.'} );
     }
 
     // If authenticated, allow the request to proceed
