@@ -7,6 +7,14 @@ const moviesController = require('../controllers/movies'); // Handles movie-rela
 const { movieRules, validate } = require('../middleware/validate'); // Validation rules for movie input
 const { isAuthenticated } = require('../middleware/authenticate'); // Authentication middleware
 
+
+// If in test mode, load mock controller; else, load real one
+const isTest = process.env.NODE_ENV === 'test';
+const controller = isTest
+  ? require('../mocks/movies.mock')
+  : require('../controllers/moviesController');
+
+
 /**
  * ===================================
  * MOVIE ROUTES
