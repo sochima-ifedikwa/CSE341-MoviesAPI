@@ -1,4 +1,4 @@
-// mocks/actors.mock.js
+// mocks/genres.mock.js
 
 const getAll = async (req, res) => {
   res
