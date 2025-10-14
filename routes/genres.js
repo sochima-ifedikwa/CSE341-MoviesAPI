@@ -17,7 +17,7 @@ const { isAuthenticated } = require('../middleware/authenticate');
 const isTest = process.env.NODE_ENV === 'test';
 const controller = isTest
   ? require('../mocks/genres.mock')
-  : require('../controllers/genresController');
+  : require('../controllers/genres');
 
 /**
  * ===================================

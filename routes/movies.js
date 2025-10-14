@@ -12,7 +12,7 @@ const { isAuthenticated } = require('../middleware/authenticate'); // Authentica
 const isTest = process.env.NODE_ENV === 'test';
 const controller = isTest
   ? require('../mocks/movies.mock')
-  : require('../controllers/moviesController');
+  : require('../controllers/movies');
 
 
 /**
