@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "swagger": "node swagger.js",
-    "test": "NODE_ENV=test jest --runInBand"
+    "test": "cross-env NODE_ENV=test jest --runInBand" 
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "jest": "^30.2.0",
     "mongodb-memory-server": "^10.2.3",
     "nodemon": "^3.1.10",
